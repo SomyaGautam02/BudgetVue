@@ -1,0 +1,14 @@
+.expense {
+  color: red;
+}
+
+.income {
+  color: rgb(92, 220, 92);
+}
+
+.title_add_record{
+    font-size: 1.7rem;
+    margin-bottom: 1rem;
+}
+
+

@@ -1,0 +1,149 @@
+.register_page {
+    background: radial-gradient(at center, #5271ff, #2e09ab);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .base_r {
+    width: 340px;
+    background: #fff;
+    border-radius: 1rem;
+    margin: auto;
+  }
+  
+  .Register {
+    padding: 2rem;
+    padding-bottom: 2rem;
+    font-family: 'Poppins', sans-serif;
+
+  }
+  
+  
+  .mb-3 {
+    text-align: left;
+    font-size: .9rem;
+
+  }
+  
+  
+  .r_button{
+    align-items: center;
+    background-color: #0A66C2;
+    border: 0;
+    border-radius: 100px;
+    box-sizing: border-box;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    justify-content: center;
+    line-height: 20px;
+    max-width: 480px;
+    min-height: 40px;
+    text-decoration: none;
+    min-width: 0px;
+    overflow: hidden;
+    padding: 0px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+    touch-action: manipulation;
+    transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: middle;
+  }
+  
+  .r_button:hover,
+  .r_button:focus { 
+    background-color: #16437E;
+    color: #ffffff;
+  }
+  
+  .r_button:active {
+    background: #09223b;
+    color: rgb(255, 255, 255, .7);
+  }
+  
+  .r_button:disabled { 
+    cursor: not-allowed;
+    background: rgba(0, 0, 0, .08);
+    color: rgba(0, 0, 0, .3);
+  }
+  
+  .para{
+    padding-top: 1.3rem;
+    margin-bottom: .3rem;
+  }
+  
+  .register_button{
+    margin-top: .8rem;
+  }
+  
+  .logo{
+    width: 80px;
+    height: 80px;
+  }
+  
+  .Register h2{
+    margin-bottom: 1rem;
+    font-family: 'Noto Sans Duployan', sans-serif;
+    font-size: 2.4rem;
+  }
+
+  .para_a{
+    font-weight: 600;
+  }
+  
+  @media screen and (max-width: 480px) {
+
+
+    .Register {
+        padding: 1rem;
+        padding-bottom: 1rem;
+      }
+
+    .base_r {
+        width: 240px;
+        background: #fff;
+        border-radius: 1rem;
+        margin: auto;
+        margin-top: 3rem;
+      }
+
+      .Register h2{
+        margin-bottom: 1rem;
+        font-family: 'Noto Sans Duployan', sans-serif;
+        font-size: 1.4rem;
+      }
+
+      .logo{
+        width: 40px;
+        height: 40px;
+      }
+      .mb-3 {
+        font-size: .8rem;
+        margin-bottom: .2rem;
+      }
+
+      .r_button{
+        font-size: .6rem;
+        padding: .6rem;
+        min-height: 16px;
+        min-width: 70px;
+      }
+
+      .para{
+        font-size: .6rem;
+      }
+
+      .register_button{
+        margin-top: .4rem;
+      }
+
+  }
+

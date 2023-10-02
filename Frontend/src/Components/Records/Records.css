@@ -1,0 +1,123 @@
+.record {
+  background-color: #d9d9d9;
+  margin-top: 1.2rem;
+  padding: 0.5rem 0;
+  border-radius: 0.3rem;
+}
+
+.record_main {
+  background-color: #5271ff;
+  display: flex;
+  padding: 0;
+  border-radius: 0.5rem;
+}
+
+.record_items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.record_amount {
+  font-size: 1.4rem;
+  width: 12rem;
+}
+
+.record_name {
+  font-size: 1.4rem;
+  width: 14rem;
+}
+
+.record_date {
+  width: 12rem;
+  text-align: center;
+}
+
+.record_icon {
+  background-color: #12486b;
+  color: white;
+  padding-left: 0.7rem;
+  padding-right: 0.7rem;
+  padding-top: 0.3rem;
+  padding-bottom: 0.7rem;
+  border-radius: 2rem;
+  font-size: 1.4rem;
+  margin: 0.4rem;
+}
+
+.filter_btn{
+  display: flex;
+  justify-content: right;
+  margin-top: 1rem;
+}
+
+.filter_select {
+width: 6rem;
+}
+
+@media screen and (max-width: 780px) {
+  .record{
+    max-width: 18rem;
+
+  }
+  .record_items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    max-width: 15rem;
+    padding: 0;
+
+  }
+  
+  .record_amount {
+    font-size: .8rem;
+    text-align: left;
+    width: 10rem;
+    white-space: nowrap; /* Prevent line breaks */
+
+  }
+  .record_date {
+    width: 8rem;
+    text-align: center;
+    font-size: .5rem;
+    text-align: left;
+
+  }
+  
+  .record_name {
+    font-size: .8rem;
+    width: 8rem;
+    text-align: left;
+  }
+  
+
+  .record_icon {
+    background-color: #12486b;
+    color: white;
+    padding-left: 0.3rem;
+    padding-right: 0.3rem;
+    border-radius: 2rem;
+    font-size: .8rem;
+    width: 2.8rem;
+    height: 2rem;
+  }
+
+  .filter_btn{
+  display: flex;
+  justify-content: right;
+
+}
+
+.ant-select-selection-item{
+  font-size: .7rem;
+
+}
+.filter_select {
+width: 5rem;
+height: 2rem;
+}
+
+}
+

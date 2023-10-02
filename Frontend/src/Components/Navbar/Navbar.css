@@ -1,0 +1,74 @@
+.navbar.navbar-expand-lg {
+  background-color: #5271ff;
+  position: sticky;
+  top: 0;
+}
+
+.navbar-nav {
+  position: absolute;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar-nav .nav-item {
+  background-color: #fff;
+  margin-right: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+  height: 3rem;
+  width: 7.5rem;
+  color: black;
+  font-family: "Rubik", sans-serif;
+}
+
+.navbar-brand {
+  color: white;
+  font-family: "Inclusive Sans", sans-serif;
+  font-size: 1.7rem;
+}
+
+.navbar-brand:hover {
+  color: white;
+  font-family: "Inclusive Sans", sans-serif;
+}
+
+.navbar-nav .nav-item:hover {
+  background-color: #004aad;
+  color: white;
+  font-size: 1.01rem;
+}
+
+div.profile_icon {
+  font-size: 3.4rem;
+  padding: 0.7rem;
+  margin-right: 1.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.ant-btn.css-dev-only-do-not-override-18iikkb.ant-btn-default {
+  visibility: hidden;
+}
+
+.ant-btn.css-dev-only-do-not-override-18iikkb.ant-btn-primary {
+  background-color: #004aad;
+}
+
+.ant-modal-content {
+  background-color: #c1c8e4;
+}
+
+@media (max-width: 768px) {
+  .navbar-brand {
+    color: white;
+    font-family: "Inclusive Sans", sans-serif;
+    font-size: 1rem;
+  }
+
+}

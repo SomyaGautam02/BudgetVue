@@ -1,0 +1,54 @@
+.Account{
+    background-color: #f4f6fc;
+    height: 7rem;
+    padding-right: 2rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+
+}
+
+#Show_Account{
+    background-color: #5271ff;
+    padding: .6rem;
+    border-radius: 1.8rem;
+    width: 10rem;
+    position: relative;
+    top: 50%;
+    transform: translate(0, -50%);
+    margin-left: 2rem;
+    color: white;
+}
+
+.Account_Title{
+    font-size: 1rem;
+}
+
+.Account_Money{
+    font-size: 1.9rem;
+
+}
+
+@media (max-width: 768px) {
+    .Account {
+      padding: .7rem; 
+      justify-content: left;
+      padding-left: .5rem;
+      display: flex;
+
+    }
+  
+    #Show_Account {
+      width: 8rem; 
+      margin: 0;
+      padding: .7rem;
+      height: max-content;
+    }
+  
+    .Account_Title {
+      font-size: .6rem; 
+    }
+  
+    .Account_Money {
+      font-size: 1rem; 
+    }
+  }

@@ -1,0 +1,18 @@
+.form_button{
+    margin-left: 2rem;
+    border: .1px solid red;
+    background-color: white;
+    color: red;
+    border: 1px solid red;
+}
+
+.form_button:hover{
+    background-color: red;
+    color: white;
+    border: 1px solid red;
+}
+
+.buttons_both{
+    display: flex;
+    justify-content: space-between;
+}
