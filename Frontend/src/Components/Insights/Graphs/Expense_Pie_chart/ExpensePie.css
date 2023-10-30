@@ -1,0 +1,65 @@
+.chart-container {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .chart-heading {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .chart-legend {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .legend-item {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .legend-color {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+  }
+  
+  .legend-label {
+    font-size: 16px;
+  }
+  
+
+  .chart-heading{
+    margin-bottom: 0;
+  }
+
+  /* .custom-tooltip{
+    background-color: red;
+    opacity: 50%;
+    border-radius: .5rem;
+    margin-top: 3rem;
+    margin-right: 3rem;
+
+  } */
+
+  .custom-tooltip {
+    background-color: rgba(255, 0, 0, 0.8); /* Red background with opacity */
+    border-radius: 0.5rem;
+    padding: .5rem;
+    color: #fff; /* Text color */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Add a subtle shadow */
+    text-align: center;
+  }
+  
+  .custom-tooltip p {
+    margin: 0.5rem 0;
+    font-size: 1rem; /* Adjust the font size */
+    font-weight: bold;
+  }
+  
+  .custom-tooltip p:last-child {
+    font-size: 0.9rem; /* Smaller font size for the percentage */
+  }
+  

@@ -1,0 +1,8 @@
+.dashboard_upper_section{
+    /* display: flex; */
+    justify-content: space-between;
+    padding: 2rem;
+}
+
+.dashboard {
+}

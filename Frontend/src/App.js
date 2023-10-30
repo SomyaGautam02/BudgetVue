@@ -11,6 +11,7 @@ import Goals from "./Components/Goals/Goals";
 import Records from "./Components/Records/Records";
 import Dashboard from "./Components/Dashboard/Dashboard";
 import Home from "./Components/Home_Page/Home";
+import BudgetPage from "./Components/Budget_Page/BudgetPage";
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
           <Route path="/records" element={<Records />} />
           <Route path="/goals" element={<Goals />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/budget" element={<BudgetPage />} />
 
 
         </Routes>

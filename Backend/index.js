@@ -5,6 +5,8 @@ const cookieParser = require("cookie-parser");
 const userRoutes = require("./routes/users");
 const transactionRoutes = require("./routes/transactions");
 const GoalsRoutes=require("./routes/goals")
+const BudgetRoutes=require("./routes/budget")
+
 const app = express();
 app.use(express.json());
 app.use(
@@ -32,3 +34,7 @@ app.use("/transactions", transactionRoutes);
 
 //GOALS ROUTES
 app.use("/goals",GoalsRoutes)
+
+//Budget ROUTES
+app.use("/budget",BudgetRoutes)
+

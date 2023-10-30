@@ -1,7 +1,7 @@
 import { Footer } from "antd/es/layout/layout";
 import React from "react";
 import "./Home.css";
-import logo from "../User/Login/BV_logo.png";
+import logo from "../../Assets/BV_logo.JPG";
 import { Link } from "react-router-dom";
 import pic from "../../Assets/hero3.png";
 import { IoIosPhonePortrait, IoIosLaptop, IoIosStats } from "react-icons/io";
@@ -21,7 +21,7 @@ const Home = () => {
       <div className="header">
         <div className="header_title">
           <Link to="/">
-            <img src={logo} alt="IMG" className="logo" />
+            <img src={logo} alt="IMG" className="logod" />
             BUDGETVUE
           </Link>{" "}
         </div>

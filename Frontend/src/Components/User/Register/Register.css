@@ -11,6 +11,8 @@
     background: #fff;
     border-radius: 1rem;
     margin: auto;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+
   }
   
   .Register {

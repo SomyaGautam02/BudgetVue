@@ -7,7 +7,6 @@ import axios from "axios";
 import { Modal } from "antd";
 import EditGoal from "../Modal/Edit_Goal/EditGoal";
 import GoalItem from "./Goal_Item/GoalItem";
-import GT from "./Goal_Item/GT";
 
 // const Goals = () => {
 //   const categoryIcons = {
@@ -131,7 +130,6 @@ const Goals = () => {
           handleCancel={handleCancel}
         />
       ))}
-      {/* <GT showModal={showModal}/> */}
       <Modal open={isModalOpen} onCancel={handleCancel} footer={false}>
         {<EditGoal goalId={modalGoalId} setIsModalOpen={setIsModalOpen} />}
       </Modal>

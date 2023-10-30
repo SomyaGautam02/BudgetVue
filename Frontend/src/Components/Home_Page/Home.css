@@ -7,6 +7,8 @@
   align-items: center;
   padding-right: 2rem;
   padding-left: 2rem;
+  height: 5.5rem;
+
 }
 
 .header a {
@@ -87,11 +89,26 @@
   display: flex;
 }
 
+.header_item{
+    background-color: #fff;
+    margin-right: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+    height: 2.5rem;
+    width: 7.5rem;
+    font-weight: 500;
+    color: black;
+}
+
 .financial-wellness-steps {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
+
+
 
 .step {
   flex-basis: calc(50% - 20px);
@@ -113,9 +130,9 @@
   background-color: white;
   color: black;
   margin-right: 2rem;
-  padding: .5rem;
+  padding: .3rem;
   border-radius: 1rem;
-  font-size: 1.1rem;
+  font-size: 1rem;
   width: 6rem;
   font-family: 'Rubik', sans-serif;
 }

@@ -1,0 +1,31 @@
+.budgetpage{
+    background-color: red;
+    height: 30rem;
+    width: 100rem;
+    display: flex;
+    padding: 2rem;
+}
+
+.budgetlist{
+    background-color: yellow;
+    width: 50rem;
+
+}
+
+.totalbudget{
+    background-color: green;
+    width: 30rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.brecord{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    width: 32rem;
+    margin-left:3rem;
+
+
+}

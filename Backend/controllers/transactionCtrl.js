@@ -11,6 +11,18 @@ const getAllTransaction = async (req, res) => {
   }
 };
 
+const getAllExpenses = async (req, res) => {
+  const userId = req.params.userId;
+  try {
+    const expenses = await transactionModel.find({ userid: userId, type: 'Expense' });
+    res.status(200).json(expenses);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json(error);
+  }
+};
+
+
 const addTransaction = async (req, res) => {
   try {
     const newTransaction = new transactionModel(req.body);
@@ -21,15 +33,62 @@ const addTransaction = async (req, res) => {
   }
 };
 
-const getLastTransaction = async (req, res) => {
+const getAllIncome = async (req, res) => {
   const userId = req.params.userId;
   try {
-    const transaction = await transactionModel
-      .findOne({ userid: userId }) // Replace 'userid' with 'userId' to match your schema field name
-      .sort({ createdAt: -1 }) // Sort by time in descending order (latest first)
-      .limit(1); // Limit the result to one record
-    res.status(200).json(transaction);
-    // console.log(transaction);
+    const incomeTotal = await transactionModel.aggregate([
+      {
+        $match: {
+          userid: userId, // Add any additional conditions if needed
+          type: "Income",
+        },
+      },
+      {
+        $group: {
+          _id: null,
+          totalIncome: { $sum: "$amount" },
+        },
+      },
+    ]);
+
+    const expenseTotal = await transactionModel.aggregate([
+      {
+        $match: {
+          userid: userId,
+          type: "Expense",
+        },
+      },
+      {
+        $group: {
+          _id: null,
+          totalExpense: { $sum: "$amount" },
+        },
+      },
+    ]);
+
+    // Extract the totalIncome and totalExpense values from the aggregation results
+    const totalIncome = incomeTotal.length > 0 ? incomeTotal[0].totalIncome : 0;
+    const totalExpense = expenseTotal.length > 0 ? expenseTotal[0].totalExpense : 0;
+
+    const netBalance = totalIncome - totalExpense;
+    res.status(200).json({netBalance,totalExpense,totalIncome});
+  } catch (error) {
+    console.error(error);
+    res.status(500).json(error);
+  }
+};
+
+
+const getLastThreeTransactions = async (req, res) => {
+  const userId = req.params.userId;
+
+  try {
+    const transactions = await transactionModel
+      .find({ userid: userId }) // Replace 'userId' with your schema field name
+      .sort({ createdAt: -1 }) // Replace 'dateField' with your date field name (e.g., 'createdAt')
+      .limit(3); // Limit the result to 3 records
+
+    res.status(200).json(transactions);
   } catch (error) {
     console.log(error);
     res.status(500).json(error);
@@ -39,4 +98,5 @@ const getLastTransaction = async (req, res) => {
 
 
 
-module.exports = { getAllTransaction, addTransaction, getLastTransaction };
+
+module.exports = { getAllTransaction, addTransaction, getAllIncome, getLastThreeTransactions,getAllExpenses };

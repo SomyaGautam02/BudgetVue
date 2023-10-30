@@ -31,6 +31,7 @@ const loginUser = async (req, res) => {
             Status: "Success",
             Name: user.name,
             Email: user.email,
+            U_id:user._id,
           });
         } else {
           return res.json("The password is incorrect");
@@ -42,5 +43,31 @@ const loginUser = async (req, res) => {
   });
 };
 
-module.exports = { loginUser, registerUser };
+const ChangePassword = async (req, res) => {
+  try {
+    const { userId } = req.params;
+    const { currentPassword, newPassword } = req.body;
+    const user = await UserModel.findById(userId);
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+    bcrypt.compare(currentPassword, user.password, async (err, response) => {
+      if (response) {
+        const hashedNewPassword = await bcrypt.hash(newPassword, 10);
+        user.password = hashedNewPassword;
+        await user.save();
+        res.status(200).json({ Status:"true" });
+      } else {
+        return res.status(200).json({ Status:"false" });
+      }
+    });
+
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Failed to change password' });
+  }
+};
+
+
+module.exports = { loginUser, registerUser, ChangePassword };
 

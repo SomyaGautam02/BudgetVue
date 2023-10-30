@@ -1,7 +1,7 @@
 import React from "react";
 import { Form, Input, Select, message } from "antd";
 import axios from "axios";
-import "./Add_Goal.css";
+import "./AddGoal.css";
 
 const AddGoal = () => {
   const [form] = Form.useForm(); // Create a form instance
