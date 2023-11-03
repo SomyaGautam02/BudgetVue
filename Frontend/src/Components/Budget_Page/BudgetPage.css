@@ -1,19 +1,23 @@
 .budgetpage{
-    background-color: red;
-    height: 30rem;
     width: 100rem;
     display: flex;
     padding: 2rem;
 }
 
 .budgetlist{
-    background-color: yellow;
     width: 50rem;
-
+    padding-left: 3rem;
 }
 
+.vertical_line_bpage{
+    background-color: rgb(196, 193, 193);
+    width: .1rem;
+    border-radius: 1rem;
+    height: 18rem;
+}
+
+
 .totalbudget{
-    background-color: green;
     width: 30rem;
     display: flex;
     flex-direction: column;
@@ -21,11 +25,26 @@
     justify-content: flex-start;
 }
 
+.brecord_bar{
+    width: 10rem;
+}
+
 .brecord{
     padding-top: 1rem;
     padding-bottom: 1rem;
-    width: 32rem;
+    width: 35rem;
     margin-left:3rem;
+}
 
+.brecord_amount{
+    width: 5rem;
+}
 
+.brecord_name{
+    width: 7rem;
+}
+
+.edit_btn_btn_item{
+    color: rgb(227, 78, 78);
+    font-size: 1.4rem;
 }

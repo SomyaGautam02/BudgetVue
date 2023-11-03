@@ -5,12 +5,15 @@ const BudgetSchema = new mongoose.Schema({
   budget_amount: {
     type: Number,
   },
+  initial_budget_amount: {
+    type: Number,
+  },
   category: {
     type: String,
   },
   date: {
-    type: String,
-    default:"01-01-2023"
+    type: Date,
+    default: new Date("2023-01-01"),
   },
 });
 

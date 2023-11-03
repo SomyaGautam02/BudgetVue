@@ -1,4 +1,21 @@
 const transactionModel = require("../model/recordModel");
+const BudgetModel = require("../model/budgetModel");
+
+async function updateBudgetAmount(category, date, expenseAmount) {
+  try {
+      const budget = await BudgetModel.findOne({ category:category});
+      const toDate = new Date(budget.date);
+      toDate.setDate(toDate.getDate() + 30)
+      if (budget && new Date(date) >= new Date(budget.date) && new Date(date) <=toDate ) {
+          budget.budget_amount -= expenseAmount;
+          await budget.save();
+      }
+  } catch (error) {
+      console.error("Error updating budget:", error);
+  }
+}
+
+
 
 const getAllTransaction = async (req, res) => {
   const userId = req.params.userId;
@@ -23,15 +40,28 @@ const getAllExpenses = async (req, res) => {
 };
 
 
+// const addTransaction = async (req, res) => {
+//   try {
+//     const newTransaction = new transactionModel(req.body);
+//     await newTransaction.save();
+//     res.status(201).send("Transaction Created");
+//   } catch (error) {
+//     res.status(500).json(error);
+//   }
+// };
+
 const addTransaction = async (req, res) => {
   try {
-    const newTransaction = new transactionModel(req.body);
+    const transactionData = req.body;
+    const newTransaction = new transactionModel(transactionData);
     await newTransaction.save();
+    await updateBudgetAmount(transactionData.category, new Date(transactionData.date), transactionData.amount);
     res.status(201).send("Transaction Created");
   } catch (error) {
     res.status(500).json(error);
   }
 };
+
 
 const getAllIncome = async (req, res) => {
   const userId = req.params.userId;

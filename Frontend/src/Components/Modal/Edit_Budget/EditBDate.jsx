@@ -10,6 +10,7 @@ const EditBDate = () => {
   const handleUpdate = async (values) => {
     try {
       const { newDate } = values;
+      console.log(newDate)
       await axios.put(
         `http://localhost:3001/budget/update-budget-date/${user.data.Email}`,
         {

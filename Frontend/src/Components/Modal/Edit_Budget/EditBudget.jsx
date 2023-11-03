@@ -52,7 +52,7 @@ const EditBudget = () => {
           ]}
         >
           <Select placeholder="Please Select Category">
-            <Select.Option value="Entertainment">Entertainment</Select.Option>
+            <Select.Option value="Enterteriment">Enterteriment</Select.Option>
             <Select.Option value="Education">Education</Select.Option>
             <Select.Option value="Food">Food</Select.Option>
             <Select.Option value="Shopping">Shopping</Select.Option>

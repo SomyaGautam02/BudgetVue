@@ -6,7 +6,10 @@ import BalanceTrend from "../Insights/Graphs/Balance_Trend/BalanceTrend";
 const AccountDetails = ({ setbalanceTrend }) => {
   const [netIncome, setnetIncome] = useState(0);
   const user = JSON.parse(localStorage.getItem("user"));
-
+  function addCommasToNumber(number) {
+    const ans = number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return ans;
+  }
   useEffect(() => {
     if (user.data && user.data.Email) {
       axios
@@ -27,7 +30,7 @@ const AccountDetails = ({ setbalanceTrend }) => {
     <div className="Account">
       <div className="Show_Account">
         <div className="Account_Title">Account</div>
-        <div className="Account_Money">₹{netIncome}</div>
+        <div className="Account_Money">₹{addCommasToNumber(netIncome)}</div>
       </div>
       <div className="Show_Account2">
       <BalanceTrend balanceTrend={netIncome} />

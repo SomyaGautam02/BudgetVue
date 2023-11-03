@@ -43,8 +43,7 @@
 
 
 @media (max-width: 768px) {
-    .Account {
-      padding: .7rem; 
+    .Account { 
       justify-content: left;
       padding-left: .5rem;
       display: flex;

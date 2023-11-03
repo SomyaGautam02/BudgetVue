@@ -22,15 +22,23 @@ const EditGoal = (props) => {
   };
 
   const handleDeleteGoal = async () => {
-    try {
-      await axios.delete(
-        `http://localhost:3001/goals/delete-goal/${props.goalId}`
-      );
-      message.success("Goal deleted successfully");
-      props.setIsModalOpen(false);
-    } catch (error) {
-      message.error("Failed to delete Goal");
+    var dgoal=window.confirm("Do you really want to Delete This Goal?")
+    if(dgoal){
+      try {
+        await axios.delete(
+          `http://localhost:3001/goals/delete-goal/${props.goalId}`
+        );
+        message.success("Goal deleted successfully");
+        props.setIsModalOpen(false);
+      } catch (error) {
+        message.error("Failed to delete Goal");
+      }
     }
+    else{
+      message.info("Goal is not Deleted.");
+      
+    }
+
   };
 
   return (

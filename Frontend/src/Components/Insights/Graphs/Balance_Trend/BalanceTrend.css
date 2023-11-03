@@ -4,3 +4,22 @@
     width: 50px;
     margin-bottom: 3rem;
   }
+
+  @media (max-width: 768px) {
+    .speedometer {
+      height: 60px; /* Adjust the height for smaller screens */
+      width: 40px;  /* Adjust the width for smaller screens */
+      margin-right: 25rem;
+      margin-bottom: 5rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .speedometer {
+      height: 40px; /* Further adjust the height for even smaller screens */
+      width: 30px;  /* Further adjust the width for even smaller screens */
+      margin-right: 25rem; /* Adjust the margin for smaller screens */
+      margin-bottom: 5rem;
+
+    }
+  }
