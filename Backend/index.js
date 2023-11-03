@@ -11,7 +11,8 @@ const app = express();
 app.use(express.json());
 app.use(
   cors({
-    origin: ["http://https://budget-vue.vercel.app/"],
+    // origin: ["http://https://budget-vue.vercel.app/"],
+    origin:["https://budget-vue.vercel.app/"],
     methods: ["GET", "POST", "DELETE","PUT"],
     credentials: true,
   })
