@@ -2,14 +2,14 @@
     "version":2,
     "builds":[
         {
-            "src":"*.js",
-            "use":"@versal/node"
+            "src":"index.js",
+            "use":"@vercal/node"
         }
     ],
     "routes":[
         {
             "src":"/(.*)",
-            "dest":"/"
+            "dest":"/index.js"
         }
     ]
 }
