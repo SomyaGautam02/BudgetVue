@@ -1,7 +1,6 @@
 {
   "name": "budgetvue",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -21,5 +20,7 @@
     "react-bootstrap": "^2.8.0",
     "react-icons": "^4.11.0",
     "uninstall": "^0.0.0"
-  }
+  },
+  "devDependencies": {},
+  "description": ""
 }

@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react'
-import "./RecentExpense.css"
-import axios from 'axios';
-import LastRecordItems from './Last_Record_Item/LastRecordItems';
+import React, { useEffect, useState } from "react";
+import "./RecentExpense.css";
+import axios from "axios";
+import LastRecordItems from "./Last_Record_Item/LastRecordItems";
 
 const RecentExpense = () => {
   const [Records, setRecords] = useState([]);
@@ -23,15 +23,11 @@ const RecentExpense = () => {
       <hr />
       <div className="re_subsection">
         {Records.map((record) => (
-          <LastRecordItems
-            key={record._id}
-            record={record}
-          />
+          <LastRecordItems key={record._id} record={record} />
         ))}
       </div>
     </div>
   );
-  
-}
+};
 
-export default RecentExpense
+export default RecentExpense;

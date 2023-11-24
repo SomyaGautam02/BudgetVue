@@ -37,13 +37,13 @@ const BudgetPage = () => {
       .catch((error) => {
         console.error("", error);
       });
-  }, []);
+  }, [BudgetRecord]);
 
   return (
     <div>
       <Navbar />
       <AccountDetails />
-      
+
       <PageHeader section="Budget" status="false" />
       <div className="budgetpage">
         <div className="budgetlist">

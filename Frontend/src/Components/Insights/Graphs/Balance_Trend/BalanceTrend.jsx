@@ -3,7 +3,6 @@ import ReactSpeedometer from "react-d3-speedometer";
 import "./BalanceTrend.css";
 
 const BalanceTrend = ({ balanceTrend }) => {
-  // Ensure the value doesn't exceed the maximum value
   const sanitizedValue = Math.min(Math.max(balanceTrend, 0), 100000);
 
   return (
@@ -13,7 +12,7 @@ const BalanceTrend = ({ balanceTrend }) => {
           height={120}
           width={180}
           value={sanitizedValue}
-          maxValue={100000} // Set the maximum value to 100000
+          maxValue={100000}
           segments={3}
           currentValueText="Balance Health"
           customSegmentStops={[0, 30000, 70000, 100000]}

@@ -29,11 +29,7 @@ const PageHeader = (props) => {
         </div>
       </div>
       <hr className="header_hr" />
-      <Modal
-        open={isModalOpen}
-        onCancel={handleCancel}
-        footer={false}
-      >
+      <Modal open={isModalOpen} onCancel={handleCancel} footer={false}>
         <AddGoal />
       </Modal>
     </div>

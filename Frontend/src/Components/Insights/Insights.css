@@ -1,9 +1,7 @@
 .insights span {
   color: #5271ff;
   margin-bottom: 0;
-
 }
-
 
 .insights_main {
   display: flex;
@@ -57,7 +55,33 @@
   margin-top: 0.3rem;
 }
 
-/* Style the chart */
 .bar-chart .recharts-legend-wrapper {
   display: none;
+}
+
+@media (max-width: 768px) {
+  .line_chart {
+    padding-left: 2rem;
+    background-color: #f4f5f8;
+  }
+
+  .expense_charts {
+    background-color: #f4f5f8;
+    padding-left: 0;
+  }
+
+  .expense_bar_graph .recharts-surface {
+    height: 10rem;
+    width: 10rem;
+    padding-right: 12rem;
+  }
+
+  .expense_bar_graph .chart-legend {
+    display: none;
+  }
+
+  .expense_vertical_chart {
+    padding-top: 0;
+    background-color: #f4f5f8;
+  }
 }

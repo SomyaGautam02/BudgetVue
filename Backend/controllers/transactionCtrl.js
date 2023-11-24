@@ -3,24 +3,26 @@ const BudgetModel = require("../model/budgetModel");
 
 async function updateBudgetAmount(category, date, expenseAmount) {
   try {
-      const budget = await BudgetModel.findOne({ category:category});
-      const toDate = new Date(budget.date);
-      toDate.setDate(toDate.getDate() + 30)
-      if (budget && new Date(date) >= new Date(budget.date) && new Date(date) <=toDate ) {
-          budget.budget_amount -= expenseAmount;
-          await budget.save();
-      }
+    const budget = await BudgetModel.findOne({ category: category });
+    const toDate = new Date(budget.date);
+    toDate.setDate(toDate.getDate() + 30);
+    if (
+      budget &&
+      new Date(date) >= new Date(budget.date) &&
+      new Date(date) <= toDate
+    ) {
+      budget.budget_amount -= expenseAmount;
+      await budget.save();
+    }
   } catch (error) {
-      console.error("Error updating budget:", error);
+    console.error("Error updating budget:", error);
   }
 }
-
-
 
 const getAllTransaction = async (req, res) => {
   const userId = req.params.userId;
   try {
-    const transactions = await transactionModel.find({userid:userId});
+    const transactions = await transactionModel.find({ userid: userId });
     res.status(200).json(transactions);
   } catch (error) {
     console.log(error);
@@ -31,7 +33,10 @@ const getAllTransaction = async (req, res) => {
 const getAllExpenses = async (req, res) => {
   const userId = req.params.userId;
   try {
-    const expenses = await transactionModel.find({ userid: userId, type: 'Expense' });
+    const expenses = await transactionModel.find({
+      userid: userId,
+      type: "Expense",
+    });
     res.status(200).json(expenses);
   } catch (error) {
     console.log(error);
@@ -39,29 +44,21 @@ const getAllExpenses = async (req, res) => {
   }
 };
 
-
-// const addTransaction = async (req, res) => {
-//   try {
-//     const newTransaction = new transactionModel(req.body);
-//     await newTransaction.save();
-//     res.status(201).send("Transaction Created");
-//   } catch (error) {
-//     res.status(500).json(error);
-//   }
-// };
-
 const addTransaction = async (req, res) => {
   try {
     const transactionData = req.body;
     const newTransaction = new transactionModel(transactionData);
     await newTransaction.save();
-    await updateBudgetAmount(transactionData.category, new Date(transactionData.date), transactionData.amount);
+    await updateBudgetAmount(
+      transactionData.category,
+      new Date(transactionData.date),
+      transactionData.amount
+    );
     res.status(201).send("Transaction Created");
   } catch (error) {
     res.status(500).json(error);
   }
 };
-
 
 const getAllIncome = async (req, res) => {
   const userId = req.params.userId;
@@ -69,7 +66,7 @@ const getAllIncome = async (req, res) => {
     const incomeTotal = await transactionModel.aggregate([
       {
         $match: {
-          userid: userId, // Add any additional conditions if needed
+          userid: userId,
           type: "Income",
         },
       },
@@ -98,25 +95,25 @@ const getAllIncome = async (req, res) => {
 
     // Extract the totalIncome and totalExpense values from the aggregation results
     const totalIncome = incomeTotal.length > 0 ? incomeTotal[0].totalIncome : 0;
-    const totalExpense = expenseTotal.length > 0 ? expenseTotal[0].totalExpense : 0;
+    const totalExpense =
+      expenseTotal.length > 0 ? expenseTotal[0].totalExpense : 0;
 
     const netBalance = totalIncome - totalExpense;
-    res.status(200).json({netBalance,totalExpense,totalIncome});
+    res.status(200).json({ netBalance, totalExpense, totalIncome });
   } catch (error) {
     console.error(error);
     res.status(500).json(error);
   }
 };
 
-
 const getLastThreeTransactions = async (req, res) => {
   const userId = req.params.userId;
 
   try {
     const transactions = await transactionModel
-      .find({ userid: userId }) // Replace 'userId' with your schema field name
-      .sort({ createdAt: -1 }) // Replace 'dateField' with your date field name (e.g., 'createdAt')
-      .limit(3); // Limit the result to 3 records
+      .find({ userid: userId })
+      .sort({ createdAt: -1 })
+      .limit(3);
 
     res.status(200).json(transactions);
   } catch (error) {
@@ -125,8 +122,25 @@ const getLastThreeTransactions = async (req, res) => {
   }
 };
 
+const deleteTransactionRecords = async (req, res) => {
+  try {
+    const userId = req.params.userId;
+
+    await transactionModel.deleteMany({ userid: userId });
+
+    res.status(200).json({ message: "All transactions deleted successfully." });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+};
 
 
-
-
-module.exports = { getAllTransaction, addTransaction, getAllIncome, getLastThreeTransactions,getAllExpenses };
+module.exports = {
+  getAllTransaction,
+  addTransaction,
+  getAllIncome,
+  getLastThreeTransactions,
+  getAllExpenses,
+  deleteTransactionRecords,
+};

@@ -13,7 +13,9 @@ const AccountDetails = ({ setbalanceTrend }) => {
   useEffect(() => {
     if (user.data && user.data.Email) {
       axios
-        .get(`http://localhost:3001/transactions/get-all-income/${user.data.Email}`)
+        .get(
+          `http://localhost:3001/transactions/get-all-income/${user.data.Email}`
+        )
         .then((response) => {
           const data = response.data;
           const totalIncome = data.netBalance;
@@ -21,10 +23,10 @@ const AccountDetails = ({ setbalanceTrend }) => {
           setbalanceTrend(totalIncome);
         })
         .catch((error) => {
-          console.error('Error fetching income total:', error);
+          console.error("Error fetching income total:", error);
         });
     }
-  }, [user.data.Email]);
+  });
 
   return (
     <div className="Account">
@@ -33,11 +35,8 @@ const AccountDetails = ({ setbalanceTrend }) => {
         <div className="Account_Money">₹{addCommasToNumber(netIncome)}</div>
       </div>
       <div className="Show_Account2">
-      <BalanceTrend balanceTrend={netIncome} />
-
+        <BalanceTrend balanceTrend={netIncome} />
       </div>
-
-
     </div>
   );
 };

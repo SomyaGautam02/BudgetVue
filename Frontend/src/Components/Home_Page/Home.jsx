@@ -3,9 +3,9 @@ import React from "react";
 import "./Home.css";
 import logo from "../../Assets/BV_logo.JPG";
 import { Link } from "react-router-dom";
-import pic from "../../Assets/hero3.png";
+import pic from "../../Assets/hero3.jpg";
 import { IoIosPhonePortrait, IoIosLaptop, IoIosStats } from "react-icons/io";
-import { MdFlag, MdMoneyOffCsred} from "react-icons/md";
+import { MdFlag, MdMoneyOffCsred } from "react-icons/md";
 import {
   FaRegChartBar,
   FaMoneyBillWave,
@@ -63,9 +63,9 @@ const Home = () => {
           </div>
 
           <div className="feature">
-      <MdMoneyOffCsred size={48} color="green" /> 
-      <p>Free of Cost</p>
-    </div>
+            <MdMoneyOffCsred size={48} color="green" />
+            <p>Free of Cost</p>
+          </div>
           <div className="feature">
             <IoIosPhonePortrait size={48} color="purple" />
             <IoIosLaptop size={48} color="purple" />
@@ -85,7 +85,7 @@ const Home = () => {
         <div className="financial-wellness-steps">
           <div className="step">
             <div className="step_icon">
-              <FaBullseye size={48}  />
+              <FaBullseye size={48} />
             </div>
             <h3>Step 1: Setting Financial Goals</h3>
             <p>Start by setting clear financial goals.</p>
@@ -106,7 +106,7 @@ const Home = () => {
           </div>
           <div className="step">
             <div className="step_icon">
-              <FaRegChartBar size={48}  />
+              <FaRegChartBar size={48} />
             </div>
             <h3>Step 4: Analyzing Your Finances</h3>
             <p>
@@ -116,14 +116,14 @@ const Home = () => {
           </div>
           <div className="step">
             <div className="step_icon">
-              <FaMoneyBillWave size={48}  />
+              <FaMoneyBillWave size={48} />
             </div>
             <h3>Step 5: Saving and Investing</h3>
             <p>Financial wellness isn't just about managing expenses.</p>
           </div>
           <div className="step">
             <div className="step_icon">
-              <FaRegLightbulb size={48}  />
+              <FaRegLightbulb size={48} />
             </div>
             <h3>Step 6: Staying on Track</h3>
             <p>Consistency is key to financial wellness.</p>
@@ -131,13 +131,14 @@ const Home = () => {
         </div>
       </div>
 
-      <Footer className="footer_section"
+      <Footer
+        className="footer_section"
         style={{
           textAlign: "center",
           width: "100%",
         }}
       >
-        <div 
+        <div
           style={{
             fontFamily: "Montserrat",
             fontWeight: "bold",

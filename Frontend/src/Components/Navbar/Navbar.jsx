@@ -9,7 +9,6 @@ import AddRecord from "../Modal/Add_Record/Add_Record";
 import AddGoal from "../Modal/Add_Goal/AddGoal";
 import "./Navbar.css";
 
-
 function Navbar() {
   const [openProfile, setOpenProfile] = useState(false);
   const [openMenu, setOpenMenu] = useState(false);
@@ -17,7 +16,7 @@ function Navbar() {
   const showModal = () => {
     setIsModalOpen(true);
   };
- 
+
   const handleCancel = () => {
     setIsModalOpen(false);
   };
@@ -26,7 +25,7 @@ function Navbar() {
     <div className="Nav">
       <nav className="navbar navbar-expand-lg">
         <div className="container-fluid">
-          <Link className="navbar-brand" to="/home">
+          <Link className="navbar-brand" to="/dashboard">
             <img src={logo} alt="IMG" className="logod" />
             BUDGETVUE
           </Link>
@@ -70,13 +69,8 @@ function Navbar() {
       </nav>
       {openProfile && <DropdownProfile />}
       {openMenu && <MobileNav />}
-      {/* {isModalOpen && <AddRecord />} */}
 
-      <Modal
-        open={isModalOpen}
-        onCancel={handleCancel}
-        footer={false}
-      >
+      <Modal open={isModalOpen} onCancel={handleCancel} footer={false}>
         <AddRecord />
       </Modal>
     </div>

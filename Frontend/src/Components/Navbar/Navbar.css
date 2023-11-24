@@ -3,7 +3,6 @@
   position: sticky;
   top: 0;
   height: 5.5rem;
-
 }
 
 .navbar-nav {
@@ -32,7 +31,7 @@
   font-size: 1.7rem;
 }
 
-.navbar-brand:hover {
+.navbar-brand:focus {
   color: white;
   font-family: "Inclusive Sans", sans-serif;
 }
@@ -65,31 +64,26 @@ div.profile_icon {
   background-color: #c1c8e4;
 }
 
-.logod{
-
+.logod {
   height: 2.8rem;
   width: 2.8rem;
   margin-right: 1rem;
   margin-left: 1.5rem;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 
-.add_record_btn{
+.add_record_btn {
   background-color: rgba(96, 232, 17, 0.777) !important;
-  /* background-color: #fff !important; */
   color: white !important;
   font-weight: 600;
   width: 7.3rem !important;
-
 }
 
-.add_record_btn:hover{
+.add_record_btn:hover {
   background-color: rgba(96, 232, 17, 0.777) !important;
-  /* background-color: #fff !important; */
   color: white !important;
   font-weight: 600;
   width: 7.3rem !important;
-
 }
 @media (max-width: 768px) {
   .navbar-brand {
@@ -98,4 +92,10 @@ div.profile_icon {
     font-size: 1rem;
   }
 
+  .logod {
+    height: 2.8rem;
+    width: 2.8rem;
+    margin-left: 0;
+    margin-bottom: 0.5rem;
+  }
 }

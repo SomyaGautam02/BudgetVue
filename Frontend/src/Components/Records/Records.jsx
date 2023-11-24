@@ -8,7 +8,6 @@ import "./Records.css";
 import { Select } from "antd";
 import { BsFillFunnelFill } from "react-icons/bs";
 
-
 const Records = () => {
   const [Records, setRecords] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -38,8 +37,26 @@ const Records = () => {
   const [filteredRecords, setFilteredRecords] = useState([]);
 
   const handleFilterByType = (type) => {
-    const filtered =
-      type === "All" ? [] : Records.filter((record) => record.type === type);
+    let filtered;
+
+    if (type === "All") {
+      filtered = [];
+    } else if (type === "LastWeek") {
+      const oneWeekAgo = new Date();
+      oneWeekAgo.setDate(oneWeekAgo.getDate() - 7);
+      filtered = Records.filter(
+        (record) => new Date(record.date) >= oneWeekAgo
+      );
+    } else if (type === "LastMonth") {
+      const oneMonthAgo = new Date();
+      oneMonthAgo.setMonth(oneMonthAgo.getMonth() - 1);
+      filtered = Records.filter(
+        (record) => new Date(record.date) >= oneMonthAgo
+      );
+    } else {
+      filtered = Records.filter((record) => record.type === type);
+    }
+
     setFilteredRecords(filtered);
   };
 
@@ -49,18 +66,17 @@ const Records = () => {
       <AccountDetails />
       <PageHeader section="Records" status="false" />
       <div className="filter_btn container">
-      <Select
-        placeholder="Filter"
-        onChange={handleFilterByType}
-        suffixIcon={<BsFillFunnelFill/>}
-        className="filter_select"
-      >
-        <Select.Option value="All">All</Select.Option>
-        <Select.Option value="Income">Income</Select.Option>
-        <Select.Option value="Expense">Expense</Select.Option>
-      </Select>
+        <Select
+          placeholder="Filter"
+          onChange={handleFilterByType}
+          suffixIcon={<BsFillFunnelFill />}
+          className="filter_select"
+        >
+          <Select.Option value="All">All</Select.Option>
+          <Select.Option value="Income">Income</Select.Option>
+          <Select.Option value="Expense">Expense</Select.Option>
+        </Select>
       </div>
-
 
       {filteredRecords.length > 0
         ? filteredRecords.map((record) => (

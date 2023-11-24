@@ -35,31 +35,22 @@
     margin-bottom: 0;
   }
 
-  /* .custom-tooltip{
-    background-color: red;
-    opacity: 50%;
-    border-radius: .5rem;
-    margin-top: 3rem;
-    margin-right: 3rem;
-
-  } */
-
   .custom-tooltip {
-    background-color: rgba(255, 0, 0, 0.8); /* Red background with opacity */
+    background-color: rgba(46, 147, 255, 0.653); 
     border-radius: 0.5rem;
     padding: .5rem;
-    color: #fff; /* Text color */
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Add a subtle shadow */
+    color: #fff; 
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); 
     text-align: center;
   }
   
   .custom-tooltip p {
     margin: 0.5rem 0;
-    font-size: 1rem; /* Adjust the font size */
+    font-size: 1rem; 
     font-weight: bold;
   }
   
   .custom-tooltip p:last-child {
-    font-size: 0.9rem; /* Smaller font size for the percentage */
+    font-size: 0.9rem;
   }
   

@@ -13,7 +13,7 @@ const MobileNav = () => {
   const showModal = () => {
     setIsModalOpen(true);
   };
- 
+
   const handleCancel = () => {
     setIsModalOpen(false);
   };
@@ -30,11 +30,18 @@ const MobileNav = () => {
         <Link className="nav-item nav-link" to="/goals">
           Goals
         </Link>
+        <Link className="nav-item nav-link" to="/budget">
+          Budget
+        </Link>
         <Link
           className="nav-item nav-link "
           onClick={showModal}
-          style={{ backgroundColor: "green", border:"solid  white .1rem", color:"white" }}
-          >
+          style={{
+            backgroundColor: "green",
+            border: "solid  white .1rem",
+            color: "white",
+          }}
+        >
           + Add Record
         </Link>
         <div
@@ -45,11 +52,7 @@ const MobileNav = () => {
         </div>
       </div>
       {openProfile && <DropdownProfile />}
-      <Modal
-        open={isModalOpen}
-        onCancel={handleCancel}
-        footer={false}
-      >
+      <Modal open={isModalOpen} onCancel={handleCancel} footer={false}>
         <AddRecord />
       </Modal>
     </div>

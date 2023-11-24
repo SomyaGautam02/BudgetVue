@@ -18,10 +18,10 @@ function App() {
     <div className="App">
       <Router>
         <Routes>
-        <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          {/* <Route
+          <Route
             path="/dashboard"
             element={
               <ProtectedRoutes>
@@ -37,16 +37,24 @@ function App() {
               </ProtectedRoutes>
             }
           />
-          <Route path="/records" element={<ProtectedRoutes><Records /></ProtectedRoutes>} /> */}
-          <Route path="/records" element={<Records />} />
-          <Route path="/goals" element={<Goals />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/budget" element={<BudgetPage />} />
-
-
+          <Route
+            path="/records"
+            element={
+              <ProtectedRoutes>
+                <Records />
+              </ProtectedRoutes>
+            }
+          />
+          <Route
+            path="/budget"
+            element={
+              <ProtectedRoutes>
+                <BudgetPage />
+              </ProtectedRoutes>
+            }
+          />
         </Routes>
       </Router>
-   
     </div>
   );
 }
@@ -55,7 +63,7 @@ export function ProtectedRoutes(props) {
   if (localStorage.getItem("user")) {
     return props.children;
   } else {
-    return <Navigate to="/login" />;
+    return <Navigate to="/" />;
   }
 }
 export default App;

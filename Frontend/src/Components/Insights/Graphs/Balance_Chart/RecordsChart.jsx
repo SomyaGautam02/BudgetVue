@@ -23,7 +23,12 @@ const RecordsChart = ({ data }) => {
           <CartesianGrid stroke="#f5f5f5" />
           <Tooltip />
           <Legend />
-          <Line type="monotone" dataKey="expenses" name="Expenses" stroke="red" />
+          <Line
+            type="monotone"
+            dataKey="expenses"
+            name="Expenses"
+            stroke="red"
+          />
         </LineChart>
       </div>
       <div className="chart col-lg-6 col-md-6 col-sm-12">
@@ -43,7 +48,6 @@ const RecordsChart = ({ data }) => {
     </div>
   );
 };
-
 
 export default RecordsChart;
 

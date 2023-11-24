@@ -4,7 +4,7 @@ import axios from "axios";
 import "./AddGoal.css";
 
 const AddGoal = () => {
-  const [form] = Form.useForm(); // Create a form instance
+  const [form] = Form.useForm();
 
   const handleSubmit = async (values) => {
     console.log(values);

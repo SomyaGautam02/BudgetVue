@@ -7,10 +7,9 @@ import axios from "axios";
 import EditBudget from "../Modal/Edit_Budget/EditBudget";
 import EditBDate from "../Modal/Edit_Budget/EditBDate";
 
-const Budget = ({TBudgetAmount, LBudgetAmount}) => {
+const Budget = ({ TBudgetAmount, LBudgetAmount }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [Budget, setBudget] = useState([]);
-  // const [BudgetDate, setBudgetDate] = useState();
 
   const showModal = (goalId) => {
     setIsModalOpen(true);
@@ -25,7 +24,9 @@ const Budget = ({TBudgetAmount, LBudgetAmount}) => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3001/budget/get-expense-afterdate/${user.data.Email}`)
+      .get(
+        `http://localhost:3001/budget/get-expense-afterdate/${user.data.Email}`
+      )
       .then((response) => {
         const data = response.data;
         const sumOfAllCategoryExpenses = data.sumOfAllCategoryExpenses;
@@ -34,29 +35,25 @@ const Budget = ({TBudgetAmount, LBudgetAmount}) => {
       .catch((error) => {
         console.error("Error fetching total expenses:", error);
       });
-  }); // The empty dependency array means this effect runs once after the component mounts.
-
-
+  });
 
   function addCommasToNumber(number) {
     const ans = String(number).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     return ans;
   }
 
-  let budget_percentage=((TBudgetAmount-LBudgetAmount)/TBudgetAmount)*100
-  let strokeColor = 'green'; 
+  let budget_percentage =
+    ((TBudgetAmount - LBudgetAmount) / TBudgetAmount) * 100;
+  let strokeColor = "green";
 
   if (budget_percentage <= 50) {
-    strokeColor = '#00ff00'; 
+    strokeColor = "#00ff00";
   } else if (budget_percentage > 50 && budget_percentage <= 75) {
-    strokeColor = '#ffff00'; 
-  }
-  else if (budget_percentage > 75) {
-    strokeColor = 'red'; 
+    strokeColor = "#ffff00";
+  } else if (budget_percentage > 75) {
+    strokeColor = "red";
   }
 
-
-  
   return (
     <div className="budget_main">
       <span>Budget</span>
@@ -81,8 +78,7 @@ const Budget = ({TBudgetAmount, LBudgetAmount}) => {
         </Link>
       </div>
       <Modal open={isModalOpen} onCancel={handleCancel} footer={false}>
-        {/* {<EditBudget budgetid={Budget._id}/>} */}
-        {<EditBDate/>}
+        {<EditBDate />}
       </Modal>
     </div>
   );

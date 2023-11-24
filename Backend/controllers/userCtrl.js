@@ -6,7 +6,7 @@ const registerUser = async (req, res) => {
   UserModel.findOne({ email: email }).then((user) => {
     if (user) {
       return res.json({
-        Status:"oldUser"
+        Status: "oldUser",
       });
     } else {
       bcrypt
@@ -31,7 +31,7 @@ const loginUser = async (req, res) => {
             Status: "Success",
             Name: user.name,
             Email: user.email,
-            U_id:user._id,
+            U_id: user._id,
           });
         } else {
           return res.json("The password is incorrect");
@@ -49,25 +49,22 @@ const ChangePassword = async (req, res) => {
     const { currentPassword, newPassword } = req.body;
     const user = await UserModel.findById(userId);
     if (!user) {
-      return res.status(404).json({ message: 'User not found' });
+      return res.status(404).json({ message: "User not found" });
     }
     bcrypt.compare(currentPassword, user.password, async (err, response) => {
       if (response) {
         const hashedNewPassword = await bcrypt.hash(newPassword, 10);
         user.password = hashedNewPassword;
         await user.save();
-        res.status(200).json({ Status:"true" });
+        res.status(200).json({ Status: "true" });
       } else {
-        return res.status(200).json({ Status:"false" });
+        return res.status(200).json({ Status: "false" });
       }
     });
-
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: 'Failed to change password' });
+    res.status(500).json({ message: "Failed to change password" });
   }
 };
 
-
 module.exports = { loginUser, registerUser, ChangePassword };
-

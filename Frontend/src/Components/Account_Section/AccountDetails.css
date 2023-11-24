@@ -1,68 +1,64 @@
-.Account{
+.Account {
   background-color: #f4f5f8;
-    height: 7rem;
-    padding-right: 2rem;
-    padding-top: 4rem;
-    padding-bottom: 4rem;
-    display: flex;
-    flex-direction: row;
-
+  height: 7rem;
+  padding-right: 2rem;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  display: flex;
+  flex-direction: row;
 }
 
-.Show_Account{
-    background-color: #5271ff;
-    padding: .6rem;
-    border-radius: 1.8rem;
-    width: 10rem;
-    height: max-content;
-    position: relative;
-    top: 50%;
-    transform: translate(0, -50%);
-    margin-left: 2rem;
-    color: white;
-}
-
-.Show_Account2{   
-  padding: .6rem;
+.Show_Account {
+  background-color: #5271ff;
+  padding: 0.6rem;
+  border-radius: 1.8rem;
   width: 10rem;
   height: max-content;
   position: relative;
   top: 50%;
   transform: translate(0, -50%);
   margin-left: 2rem;
-  color: black;}
-
-.Account_Title{
-    font-size: 1rem;
+  color: white;
 }
 
-.Account_Money{
-    font-size: 1.9rem;
-
+.Show_Account2 {
+  padding: 0.6rem;
+  width: 10rem;
+  height: max-content;
+  position: relative;
+  top: 50%;
+  transform: translate(0, -50%);
+  margin-left: 2rem;
+  color: black;
 }
 
+.Account_Title {
+  font-size: 1rem;
+}
+
+.Account_Money {
+  font-size: 1.9rem;
+}
 
 @media (max-width: 768px) {
-    .Account { 
-      justify-content: left;
-      padding-left: .5rem;
-      display: flex;
-
-    }
-  
-    #Show_Account {
-      width: 8rem; 
-      margin: 0;
-      padding: .7rem;
-      height: max-content;
-    }
-  
-    .Account_Title {
-      font-size: .6rem; 
-    }
-  
-    .Account_Money {
-      font-size: 1rem; 
-    }
+  .Account {
+    justify-content: left;
+    padding-left: 2.8rem;
+    display: flex;
   }
 
+  .Show_Account {
+    width: 8rem;
+    margin: 0;
+    padding: 0.7rem;
+    height: max-content;
+  }
+
+  .Account_Title {
+    font-size: 0.9rem;
+  }
+
+  .Account_Money {
+    font-size: 1.2rem;
+  }
+}

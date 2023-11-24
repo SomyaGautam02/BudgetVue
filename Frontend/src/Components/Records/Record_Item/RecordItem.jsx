@@ -16,25 +16,26 @@ const RecordItem = ({ record, showModal, handleCancel }) => {
 
   return (
     <div className="record container">
-    <div className="record_main container">
-      <span className="record_icon">{recordIcons[record.type]}</span>
-      <div className="record_items container">
-        <div className="record_name ">{record.category}</div>
-        <div className="record_date ">
-          {record.date}
-          <div className="record_time ">
-            {new Date(record.createdAt).toLocaleTimeString("en-US", {
-              hour: "numeric",
-              minute: "numeric",
-              hour12: true,
-            })}
+      <div className="record_main container">
+        <span className="record_icon">{recordIcons[record.type]}</span>
+        <div className="record_items container">
+          <div className="record_name ">{record.category}</div>
+          <div className="record_date ">
+            {record.date}
+            <div className="record_time ">
+              {new Date(record.createdAt).toLocaleTimeString("en-US", {
+                hour: "numeric",
+                minute: "numeric",
+                hour12: true,
+              })}
+            </div>
+          </div>
+          <div className="record_amount">
+            ₹{addCommasToNumber(record.amount)}
           </div>
         </div>
-        <div className="record_amount">₹{addCommasToNumber(record.amount)}</div>
       </div>
     </div>
-    </div>
-
   );
 };
 

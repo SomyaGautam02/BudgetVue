@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import "./EditGoal.css";
 
 const EditGoal = (props) => {
-  const [form] = Form.useForm(); // Create a form instance
+  const [form] = Form.useForm();
   const [newAmount, setNewAmount] = useState();
   const [newDate, setNewDate] = useState();
   const handleUpdate = async () => {
@@ -17,13 +17,12 @@ const EditGoal = (props) => {
         }
       );
       message.success("Updated Goal");
-      // Handle success (e.g., show a success message)
     } catch (error) {}
   };
 
   const handleDeleteGoal = async () => {
-    var dgoal=window.confirm("Do you really want to Delete This Goal?")
-    if(dgoal){
+    var dgoal = window.confirm("Do you really want to Delete This Goal?");
+    if (dgoal) {
       try {
         await axios.delete(
           `http://localhost:3001/goals/delete-goal/${props.goalId}`
@@ -33,12 +32,9 @@ const EditGoal = (props) => {
       } catch (error) {
         message.error("Failed to delete Goal");
       }
-    }
-    else{
+    } else {
       message.info("Goal is not Deleted.");
-      
     }
-
   };
 
   return (

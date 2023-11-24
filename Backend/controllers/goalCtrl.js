@@ -58,7 +58,7 @@ const updateGoal = async (req, res) => {
   }
 };
 
-const getgoalsdetails = async(req, res)=>{
+const getgoalsdetails = async (req, res) => {
   const userId = req.params.userId;
   try {
     const goals = await GoalModel.find({ userid: userId });
@@ -67,7 +67,7 @@ const getgoalsdetails = async(req, res)=>{
     let totalAmountLeft = 0;
     for (const goal of goals) {
       totalAmountSaved += goal.saved_amount;
-      totalAmountLeft += (goal.amount - goal.saved_amount);
+      totalAmountLeft += goal.amount - goal.saved_amount;
     }
     const summary = {
       numberOfGoals,
@@ -79,7 +79,12 @@ const getgoalsdetails = async(req, res)=>{
     console.log(error);
     res.status(500).json(error);
   }
+};
 
-}
-
-module.exports = { addGoals, getAllGoals, deleteGoal, updateGoal, getgoalsdetails };
+module.exports = {
+  addGoals,
+  getAllGoals,
+  deleteGoal,
+  updateGoal,
+  getgoalsdetails,
+};

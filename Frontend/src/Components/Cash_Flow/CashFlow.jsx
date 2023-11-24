@@ -35,10 +35,14 @@ const CashFlow = () => {
       <div className="cf_subsection">
         <div className="cf_items">
           <div className="cf_item">
-            Total Income: <div className="cf_amount" >₹{addCommasToNumber(totalIncome)}</div>
+            Total Income:{" "}
+            <div className="cf_amount">₹{addCommasToNumber(totalIncome)}</div>
           </div>
           <div className="cf_item">
-            Total Expense: <div className="cf_amount cf_expense">₹{addCommasToNumber(totalExpense)}</div>
+            Total Expense:{" "}
+            <div className="cf_amount cf_expense">
+              ₹{addCommasToNumber(totalExpense)}
+            </div>
           </div>
         </div>
       </div>

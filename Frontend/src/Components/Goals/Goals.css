@@ -1,4 +1,3 @@
-/* Existing styles for larger screens */
 .goal_main {
   background-color: #5271ff;
   margin: 1rem;
@@ -10,7 +9,9 @@
   border-radius: 1.4rem;
   padding-top: 1.1rem;
   color: white;
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;}
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
 .goal_m {
   display: flex;
 }
@@ -87,36 +88,36 @@
   word-break: normal;
 }
 
-/* New styles for smaller screens (mobile) */
 @media (max-width: 768px) {
   .goal_main {
-    width: auto; /* Adjust the width for smaller screens */
+    width: auto;
     margin: 1rem;
     padding: 0.3rem;
-    padding-right: .8rem;
-    padding-left: .8rem;
+    padding-right: 0.8rem;
+    padding-left: 0.8rem;
   }
 
   .goal_submain {
-    flex-direction: column; /* Stack elements vertically on smaller screens */
+    flex-direction: row;
     align-items: center;
   }
 
   .goal_subsection {
     padding-top: 0.2rem;
-    flex-direction: column; /* Stack elements vertically on smaller screens */
+    flex-direction: row;
     align-items: center;
   }
 
   .edit_icon {
-    padding-left: 0; /* Remove left padding for smaller screens */
-  font-size: 0.8rem;
+    padding-left: 0.5rem;
+    font-size: 0.8rem;
   }
 
   .goal_name {
-    width: auto; /* Adjust width for smaller screens */
+    width: auto;
     text-align: center;
-    font-size: 1.3rem;
+    font-size: 0.8rem;
+    width: max-content;
   }
 
   .per_bar {
@@ -127,21 +128,19 @@
   }
 
   .goal_icon {
-    font-size: .8rem;
-
-
+    font-size: 0.8rem;
+    margin-top: 0.7rem;
   }
 
   .target_date {
-    padding-left: 0;
-    text-align: center;
-    font-size: .7rem;
+    padding-left: 2.4rem;
+    text-align: left;
+    font-size: 0.7rem;
   }
 
   .goal_amount {
-    width: auto; /* Adjust width for smaller screens */
+    width: auto;
     text-align: center;
-    font-size: .9rem; /* Increase font size for better visibility */
- 
+    font-size: 0.8rem;
   }
 }

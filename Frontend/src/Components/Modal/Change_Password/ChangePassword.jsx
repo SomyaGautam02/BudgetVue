@@ -3,18 +3,19 @@ import axios from "axios";
 import React, { useState } from "react";
 
 const ChangePassword = (props) => {
-  const [form] = Form.useForm(); 
+  const [form] = Form.useForm();
   const [newPassword, setNewPassword] = useState();
   const [currentPassword, setOldPassword] = useState();
   const handleUpdate = async () => {
     axios
-  .put( `http://localhost:3001/change-password/${props.userid}`, {currentPassword,newPassword})
-  .then((response) => {
-      message.info(response.data.Status)
-  })
-  .catch((error) => {
-    
-  });
+      .put(`http://localhost:3001/change-password/${props.userid}`, {
+        currentPassword,
+        newPassword,
+      })
+      .then((response) => {
+        message.info(response.data.Status);
+      })
+      .catch((error) => {});
   };
 
   return (
@@ -56,7 +57,6 @@ const ChangePassword = (props) => {
             onChange={(e) => setNewPassword(e.target.value)}
           />
         </Form.Item>
-
 
         <div className="d-flex justify-content-center buttons_both">
           <button className="btn btn-primary " type="submit">

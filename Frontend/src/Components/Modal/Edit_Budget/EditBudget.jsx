@@ -19,7 +19,6 @@ const EditBudget = () => {
       );
       message.success("Budget Updated.");
     } catch (error) {
-      // Handle errors here
       console.error(error);
     }
   };

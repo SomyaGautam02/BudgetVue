@@ -4,7 +4,7 @@ import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../Login/BV_logo.png";
 import "../Register/Register.css";
-import {Input, message } from "antd";
+import { Input, message } from "antd";
 
 function Signup() {
   const [name, setName] = useState();
@@ -16,7 +16,7 @@ function Signup() {
     e.preventDefault();
     try {
       axios
-        .post("http://localhost:3001/register", { name, email,password})
+        .post("http://localhost:3001/register", { name, email, password })
         .then((res) => {
           if (res.data.Status === "oldUser") {
             message.error("User Already Exists!");
@@ -29,13 +29,6 @@ function Signup() {
       message.error("Failed to add Account");
     }
   };
-
-  //prevent for login user
-  // useEffect(()=>{
-  //   if(localStorage.getItem('user')){
-  //     navigate('/dashboard')
-  //   }
-  // },[navigate])
 
   return (
     <div className="register_page">

@@ -22,10 +22,8 @@ const Dashboard = () => {
           <RecentExpense />
         </div>
         <div className="col-lg-3 col-md-6 col-sm-12">
-          {/* <Budget /> */}
-          <GoalCard/>
+          <GoalCard />
         </div>
-
       </div>
       <hr />
       <Insights balanceTrend={balanceTrend} />

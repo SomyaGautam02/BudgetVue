@@ -14,17 +14,6 @@ const Insights = ({ balanceTrend }) => {
   const [CashFlow, setCashFlowData] = useState([]);
 
   const user = JSON.parse(localStorage.getItem("user"));
-  // useEffect(() => {
-  //   axios
-  //     .get(
-  //       `http://localhost:3001/transactions/get-transactions/${user.data.Email}`
-  //     )
-  //     .then((records) => {
-  //       setRecords(records.data.reverse());
-  //     })
-  //     .catch((err) => console.log(err));
-  // }, [Records]);
-
   useEffect(() => {
     axios
       .get(
@@ -65,8 +54,8 @@ const Insights = ({ balanceTrend }) => {
   return (
     <div className="insights">
       <div className="insights_main row">
-      <h2>Insights</h2>
-      <div className="charts_heading col-lg-12 col-md-12 col-sm-12">
+        <h2>Insights</h2>
+        <div className="charts_heading col-lg-12 col-md-12 col-sm-12">
           {" "}
           Income/Expense Charts
         </div>
@@ -76,7 +65,6 @@ const Insights = ({ balanceTrend }) => {
         <div className="charts_heading col-lg-12 col-md-12 col-sm-12">
           {" "}
           CashFlow Chart
-          {/* <div className="bottom_line"><hr /></div> */}
         </div>
         <div className="cashflow_graph col-lg-12 col-md-6 col-sm-12">
           <CashFlowTrend data={CashFlow} />

@@ -8,7 +8,9 @@
   background-color: #5271ff;
   color: white;
   z-index: 111;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;}
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
 
 .dropDownProfile ul {
   list-style-type: none;
@@ -22,9 +24,6 @@
   border-radius: 0.7rem;
   text-decoration: none;
   width: 8.9rem;
-}
-
-a .Logout_text {
 }
 
 .User_name {
@@ -47,12 +46,12 @@ a .Logout_text {
     width: 178px;
     padding: 15px;
     border-radius: 8px;
-    background-color:#5271ff;
+    background-color: #5271ff;
     color: white;
     z-index: 12;
-    top: 70%; 
+    top: 70%;
     left: 50%;
-    transform: translate(-50%, -50%); 
+    transform: translate(-50%, -50%);
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
   }
 }
