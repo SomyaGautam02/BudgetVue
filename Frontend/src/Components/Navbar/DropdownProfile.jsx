@@ -5,7 +5,6 @@ import { MdDeleteForever } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { Modal, message } from "antd";
 import ChangePassword from "../Modal/Change_Password/ChangePassword";
-import DeleteRecords from "../Modal/Delete_Records/DeleteRecords";
 import axios from "axios";
 
 const DropdownProfile = () => {

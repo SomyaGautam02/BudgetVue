@@ -26,7 +26,7 @@ const AccountDetails = ({ setbalanceTrend }) => {
           console.error("Error fetching income total:", error);
         });
     }
-  });
+  },[]);
 
   return (
     <div className="Account">
