@@ -41,18 +41,6 @@ const Records = () => {
 
     if (type === "All") {
       filtered = [];
-    } else if (type === "LastWeek") {
-      const oneWeekAgo = new Date();
-      oneWeekAgo.setDate(oneWeekAgo.getDate() - 7);
-      filtered = Records.filter(
-        (record) => new Date(record.date) >= oneWeekAgo
-      );
-    } else if (type === "LastMonth") {
-      const oneMonthAgo = new Date();
-      oneMonthAgo.setMonth(oneMonthAgo.getMonth() - 1);
-      filtered = Records.filter(
-        (record) => new Date(record.date) >= oneMonthAgo
-      );
     } else {
       filtered = Records.filter((record) => record.type === type);
     }

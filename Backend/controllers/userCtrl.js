@@ -56,9 +56,9 @@ const ChangePassword = async (req, res) => {
         const hashedNewPassword = await bcrypt.hash(newPassword, 10);
         user.password = hashedNewPassword;
         await user.save();
-        res.status(200).json({ Status: "true" });
+        res.status(200).json({ Status: "Password Changed" });
       } else {
-        return res.status(200).json({ Status: "false" });
+        return res.status(200).json({ Status: "Retry" });
       }
     });
   } catch (error) {

@@ -28,7 +28,7 @@ const DropdownProfile = () => {
     }
   }, []);
   const user_name = loginuser.data.Name;
-  const LogoutHandler = () => {
+  const LogoutHandler = async () => {
     var logoutH = window.confirm("Do you really want to Logout?");
     if(logoutH){
       localStorage.removeItem("user");

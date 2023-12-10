@@ -19,6 +19,7 @@ const AddRecord = (props) => {
       });
       message.success("Record added sucessfully");
       form.resetFields();
+      // window.location.reload();
     } catch (error) {
       message.error("Failed to add Record");
     }

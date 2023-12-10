@@ -55,7 +55,7 @@ const EditBudget = () => {
             <Select.Option value="Education">Education</Select.Option>
             <Select.Option value="Food">Food</Select.Option>
             <Select.Option value="Shopping">Shopping</Select.Option>
-            <Select.Option value="Travel">Travel</Select.Option>
+            <Select.Option value="Transportation">Transportation</Select.Option>
             <Select.Option value="Others">Miscellaneous</Select.Option>
           </Select>
         </Form.Item>

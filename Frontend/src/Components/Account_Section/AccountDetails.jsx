@@ -10,6 +10,7 @@ const AccountDetails = ({ setbalanceTrend }) => {
     const ans = number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     return ans;
   }
+
   useEffect(() => {
     if (user.data && user.data.Email) {
       axios
